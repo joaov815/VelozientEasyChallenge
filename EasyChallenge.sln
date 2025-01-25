@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistedFizzBuzz", "TwistedF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomFizzBuzz", "CustomFizzBuzz\CustomFizzBuzz.csproj", "{3453F006-DBB7-4E79-9766-5C53B1C5CB61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistedFizzBuzzTests", "TwistedFizzBuzzTests\TwistedFizzBuzzTests.csproj", "{F06B3A46-4A78-425A-BBBE-2F6FA869B6D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{3453F006-DBB7-4E79-9766-5C53B1C5CB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3453F006-DBB7-4E79-9766-5C53B1C5CB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3453F006-DBB7-4E79-9766-5C53B1C5CB61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06B3A46-4A78-425A-BBBE-2F6FA869B6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06B3A46-4A78-425A-BBBE-2F6FA869B6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06B3A46-4A78-425A-BBBE-2F6FA869B6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06B3A46-4A78-425A-BBBE-2F6FA869B6D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

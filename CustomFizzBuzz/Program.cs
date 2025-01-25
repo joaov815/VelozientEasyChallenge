@@ -1,2 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Text.Json;
+using TwistedFizzBuzz;
+
+var res = TwistedFizzBuzzHelper.FromRange(
+    -20,
+    127,
+    numberPerToken: new()
+    {
+        { 5, "Fizz" },
+        { 9, "Buzz" },
+        { 27, "Bar" },
+    },
+    shouldCombinateRules: true
+);
+
+// Output numbers from -20 to 127 following the rules
+Console.WriteLine(JsonSerializer.Serialize(res));

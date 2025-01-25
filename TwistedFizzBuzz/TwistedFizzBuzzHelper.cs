@@ -8,6 +8,20 @@ public class TwistedFizzBuzzHelper
         { 5, "Buzz" },
     };
 
+    private static int[] GetArrayFromRange(int start, int end)
+    {
+        bool isAscending = start < end;
+        int arrayLength = Math.Abs(end - start) + 1;
+        int[] rangeArray = new int[arrayLength];
+
+        for (int i = 0; i < arrayLength; i++)
+        {
+            rangeArray[i] = isAscending ? start + i : start - i;
+        }
+
+        return rangeArray;
+    }
+
     public static string[] FromRange(
         int start,
         int end,
@@ -15,14 +29,7 @@ public class TwistedFizzBuzzHelper
         bool shouldCombinateRules = false
     )
     {
-        if (end < start)
-        {
-            throw new Exception("The end parameter should be higher than the start");
-        }
-
-        int[] rangeArray = [.. Enumerable.Range(start, end - start + 1)];
-
-        return GetFizzBuzz(rangeArray, numberPerToken, shouldCombinateRules);
+        return GetFizzBuzz(GetArrayFromRange(start, end), numberPerToken, shouldCombinateRules);
     }
 
     public static string[] GetFizzBuzz(

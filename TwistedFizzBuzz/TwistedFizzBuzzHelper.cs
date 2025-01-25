@@ -22,6 +22,30 @@ public class TwistedFizzBuzzHelper
         return rangeArray;
     }
 
+    private static string GetTokenByNumber(
+        int num,
+        Dictionary<int, string> divisorPerToken,
+        bool shouldCombinateRules
+    )
+    {
+        string curToken = "";
+
+        foreach (var (ruleNum, token) in divisorPerToken)
+        {
+            if (num % ruleNum == 0)
+            {
+                curToken += token;
+
+                if (!shouldCombinateRules)
+                {
+                    break;
+                }
+            }
+        }
+
+        return string.IsNullOrEmpty(curToken) ? num.ToString() : curToken;
+    }
+
     public static string[] FromRange(
         int start,
         int end,
@@ -44,23 +68,7 @@ public class TwistedFizzBuzzHelper
 
         for (int i = 0; i < length; i++)
         {
-            int num = numbers[i];
-            string curToken = "";
-
-            foreach (var (ruleNum, token) in divisorPerToken)
-            {
-                if (num % ruleNum == 0)
-                {
-                    curToken += token;
-
-                    if (!shouldCombinateRules)
-                    {
-                        break;
-                    }
-                }
-            }
-
-            result[i] = string.IsNullOrEmpty(curToken) ? num.ToString() : curToken;
+            result[i] = GetTokenByNumber(numbers[i], divisorPerToken, shouldCombinateRules);
         }
 
         return result;

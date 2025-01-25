@@ -4,13 +4,13 @@ using TwistedFizzBuzz;
 var res = TwistedFizzBuzzHelper.FromRange(
     -20,
     127,
-    numberPerToken: new()
+    new()
     {
         { 5, "Fizz" },
         { 9, "Buzz" },
         { 27, "Bar" },
     },
-    shouldCombinateRules: true
+    true
 );
 
 // Output numbers from -20 to 127 following the rules

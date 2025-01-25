@@ -2,7 +2,7 @@
 
 public class TwistedFizzBuzzHelper
 {
-    private static readonly Dictionary<int, string> defaultNumberPerToken = new()
+    private static readonly Dictionary<int, string> defaultDivisorPerToken = new()
     {
         { 3, "Fizz" },
         { 5, "Buzz" },
@@ -25,20 +25,20 @@ public class TwistedFizzBuzzHelper
     public static string[] FromRange(
         int start,
         int end,
-        Dictionary<int, string>? numberPerToken = null,
+        Dictionary<int, string>? divisorPerToken = null,
         bool shouldCombinateRules = false
     )
     {
-        return GetFizzBuzz(GetArrayFromRange(start, end), numberPerToken, shouldCombinateRules);
+        return GetFizzBuzz(GetArrayFromRange(start, end), divisorPerToken, shouldCombinateRules);
     }
 
     public static string[] GetFizzBuzz(
         int[] numbers,
-        Dictionary<int, string>? numberPerToken = null,
+        Dictionary<int, string>? divisorPerToken = null,
         bool shouldCombinateRules = false
     )
     {
-        numberPerToken ??= defaultNumberPerToken;
+        divisorPerToken ??= defaultDivisorPerToken;
         int length = numbers.Length;
         string[] result = new string[length];
 
@@ -47,11 +47,11 @@ public class TwistedFizzBuzzHelper
             int num = numbers[i];
             string curToken = "";
 
-            foreach (var (ruleNum, token) in numberPerToken)
+            foreach (var (ruleNum, token) in divisorPerToken)
             {
                 if (num % ruleNum == 0)
                 {
-                    curToken += string.IsNullOrEmpty(curToken) ? token : $"-{token}";
+                    curToken += token;
 
                     if (!shouldCombinateRules)
                     {

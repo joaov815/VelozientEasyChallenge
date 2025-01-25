@@ -25,7 +25,7 @@ public class TwistedFizzBuzzHelper
         return GetFizzBuzz(rangeArray, numberPerToken, shouldCombinateRules);
     }
 
-    private static string[] GetFizzBuzz(
+    public static string[] GetFizzBuzz(
         int[] numbers,
         Dictionary<int, string>? numberPerToken = null,
         bool shouldCombinateRules = false
